@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TestWebAPI.Features
+namespace TestWebAPI.TestCases
 {
     using TechTalk.SpecFlow;
     
@@ -19,19 +19,20 @@ namespace TestWebAPI.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class AddVendorFeature
+    public partial class DeleteInspectionReportFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AddContract.feature"
+#line 1 "DeleteInpectionReport.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AddVendor", "Add a new vendor and check all fields saved correctly.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DeleteInspectionReport", "Target: DELETE api/Organization/Delete/{entityName}/{id}\r\nTest Scenarios:\r\n1. Del" +
+                    "ete a new Inspection Report;\r\n2. Delete a non-existing Inspection Report;", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +47,9 @@ namespace TestWebAPI.Features
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "AddVendor")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "DeleteInspectionReport")))
             {
-                TestWebAPI.Features.AddVendorFeature.FeatureSetup(null);
+                TestWebAPI.TestCases.DeleteInspectionReportFeature.FeatureSetup(null);
             }
         }
         
@@ -69,34 +70,40 @@ namespace TestWebAPI.Features
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add Vendor")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "AddVendor")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("web")]
-        public virtual void AddVendor()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete Inspection Report")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DeleteInspectionReport")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("p1")]
+        public virtual void DeleteInspectionReport()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Vendor", new string[] {
-                        "web"});
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Inspection Report", new string[] {
+                        "p1"});
+#line 8
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Label",
+                        "AttributePhysicalName",
                         "Value"});
             table1.AddRow(new string[] {
-                        "VendorID",
-                        "test001"});
+                        "PImpProjAutoID",
+                        "1111 - 1111"});
             table1.AddRow(new string[] {
-                        "VendorName",
-                        "test001"});
+                        "PContractAutoID",
+                        "cofee02 - cofee02"});
             table1.AddRow(new string[] {
-                        "IsActive",
+                        "ContractPerson",
+                        "12 - 12"});
+            table1.AddRow(new string[] {
+                        "InspectorID",
                         "1"});
-#line 6
- testRunner.Given("Vendor information as following", ((string)(null)), table1, "Given ");
-#line 11
- testRunner.When("I press save contract button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.Then("A new contract should be added and all fields save correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            table1.AddRow(new string[] {
+                        "WorkPerformed",
+                        "WorkPerformed"});
+#line 9
+ testRunner.Given("Create a new Inspection Report", ((string)(null)), table1, "Given ");
+#line 16
+ testRunner.When("Send a request to api:\'Organization/Delete\' to delete this Inspection Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.Then("Target Inspection Report should be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
