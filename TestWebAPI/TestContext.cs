@@ -21,6 +21,8 @@ namespace TestWebAPI
 
         static TestContext()
         {
+            // Hello World
+            // 2018-09-12 13:08到此一游
             NAME = ConfigurationManager.AppSettings["UserName"];
             PASSWORD = ConfigurationManager.AppSettings["PassWord"];
             URL = ConfigurationManager.AppSettings["WebAPIURL"] + "api/";
